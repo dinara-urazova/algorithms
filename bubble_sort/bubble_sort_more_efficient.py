@@ -1,4 +1,4 @@
-# more optimized version for the case with a sorted array
+# more optimized version of early termination in case of a sorted array
 from typing import List
 
 
