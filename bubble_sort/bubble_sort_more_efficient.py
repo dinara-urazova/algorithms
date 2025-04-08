@@ -5,17 +5,16 @@ from typing import List
 class Solution:
     def bubbleSort(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        cf = 0
         for i in range(n - 1):
             swaps = 0
             for j in range(n - 1 - i):
                 if nums[j] > nums[j + 1]:
                     nums[j], nums[j + 1] = nums[j + 1], nums[j]
-                    cf += 1  # to see that in case of the sorted array no swaps have been done
+                    # to see that in case of the sorted array no swaps have been done
                     swaps = 1
             if swaps == 0:
                 break
-        # print(nums, cf)
+        # print(nums)
         return nums
 
 
