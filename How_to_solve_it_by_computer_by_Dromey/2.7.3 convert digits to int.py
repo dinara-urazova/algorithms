@@ -2,9 +2,8 @@
 
 def digits_into_integer_converter(digits) -> int:
     res = 0
-    digits = list(digits)
     for dig in digits:
-        res = res * 10 + int(dig)
+        res = res * 10 + dig
     return res
 
 

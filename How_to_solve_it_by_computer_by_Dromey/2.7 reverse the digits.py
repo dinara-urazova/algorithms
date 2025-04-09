@@ -25,9 +25,9 @@ Last one - condition uder which the iterative process should terminate.
 It should be related to the input integer (while there are digits in it as it's reduced by each step) 
 
 
-Algorithms
+Algorithm
 1) Use the remainder function to extract the righmost digit of the num
-2) increase the prev reversed integer * 10 + add last remainder
+2) increase the prev reversed integer * 10 + add a most recent remainder
 3) use integer division by 10 to remove the rightmost digit from the num
 """
 
