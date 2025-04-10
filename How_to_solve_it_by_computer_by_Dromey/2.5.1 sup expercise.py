@@ -1,4 +1,4 @@
-# if we're given a certain, num we should compute !0 + !1 ... + !num resulting in a sum of factorials
+# if we're given a certain num we should compute !0 + !1 ... + !num resulting in a sum of factorials
 
 
 def sum_of_factorials(n):
