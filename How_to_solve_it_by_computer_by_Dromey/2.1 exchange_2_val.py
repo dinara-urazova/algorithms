@@ -28,7 +28,7 @@ print(f"a = {a}, b = {b}")
 Algorithm description
 1. Save the original value of a in temp.
 2. Assign to a the original value of b.
-3. Assign to b the original value of a stored in teml variable.
+3. Assign to b the original value of a stored in temp variable.
 
 A more common application of this kind of algorithm implies exchange of 2 array elements, e.g. a[i] and a[j]:
 

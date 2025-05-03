@@ -32,6 +32,7 @@ c = a + b   [3] new term
 a = b       [4] bp is previous p
 b = c       [5] p is previous new term
 a, b = b, c
+a, b = b, a + b
 From step 5 to step 3 loop
 """
 

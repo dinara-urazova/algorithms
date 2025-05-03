@@ -21,7 +21,7 @@ First we get 3 then 5 '35' = 3 * 10 + 5 -> 35
 reversed = prev_value of reversed * 10 + last remainder  - should be eligible for all iteration
 [1] rev = rev * 10 + 3 [rev should be 3] to get 3 initial rev should be 0
 
-Last one - condition uder which the iterative process should terminate.
+Last one - condition under which the iterative process should terminate.
 It should be related to the input integer (while there are digits in it as it's reduced by each step) 
 
 

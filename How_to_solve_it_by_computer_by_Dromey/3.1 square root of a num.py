@@ -1,0 +1,39 @@
+# alg to find the square root of the number
+"""
+The method below has actually its name: Newton-Raphson method
+the square root n of a certain m number should satisfy the equation
+n * n = m (1)
+
+Possible algorithm 
+1) Choose the number n < m 
+2) Square n and if it's greater than m, decrease it by 1 and repeat step 2
+3) If the square of the guess at square root is less than m, we can increase it by 0.1 unti we compute the square root
+The number of iterations this algorithm requires depends critically on how good our initial guess is.
+We need to find a more efficient way which doesn't depend on the initial guess.
+eg we need to find the square root of 36, choose 9 as an initial guess
+9**2 = 81 (more than 36)
+
+Algorithm descriptioin
+1. Establish m the number whose square root is required and the termination condition error e.
+2. Set the initial guess g2 to m/2.
+3. Repeatedly
+a) let g1 assume the role of g2
+b) generate a better estimate g2 of the square root using the averaging formula until the absolute difference between g1 and g2 is less than error e.
+4. Return the estimated square root g2.
+"""
+
+def square_root(m: int):
+    error = 0.0001
+    g2 = m / 2 # initial guess
+    g1 = 0 # previous guess
+    while abs(g1 - g2) > error:
+        g1 = g2 # update previous guess
+        g2 = (g1 + m/g1) / 2 # current guess is updated using the average of the last guess and m/last_guess
+    sqroot = g2
+    return sqroot
+
+
+
+num = 36
+res = square_root(num)
+print(res)
