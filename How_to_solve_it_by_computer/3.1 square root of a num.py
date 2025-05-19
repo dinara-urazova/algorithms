@@ -7,11 +7,18 @@ n * n = m (1)
 Possible algorithm 
 1) Choose the number n < m 
 2) Square n and if it's greater than m, decrease it by 1 and repeat step 2
-3) If the square of the guess at square root is less than m, we can increase it by 0.1 unti we compute the square root
+3) If the square of the guess at square root is less than m, we can increase it by 0.1 until we compute the square root
 The number of iterations this algorithm requires depends critically on how good our initial guess is.
 We need to find a more efficient way which doesn't depend on the initial guess.
-eg we need to find the square root of 36, choose 9 as an initial guess
+e.g. we need to find the square root of 36, choose 9 as an initial guess
 9**2 = 81 (more than 36)
+
+Strategy of averaging complementary estimates of the square root
+eg 36  - g1 take 9 (9**2 = 81 too high),  36/9 = 4 (4**2 too small) (9+4//2 -> 6 something)
+g2 = (g1 + m/g1) / 2
+To generate a loop - g1 = g2
+How to terminate the process - 
+
 
 Algorithm descriptioin
 1. Establish m the number whose square root is required and the termination condition error e.
@@ -25,10 +32,10 @@ b) generate a better estimate g2 of the square root using the averaging formula 
 def square_root(m: int):
     error = 0.0001
     g2 = m / 2 # initial guess
-    g1 = 0 # previous guess
-    while abs(g1 - g2) > error:
+    g1 = 0 # next guess
+    while abs(g2 - g1) > error:
         g1 = g2 # update previous guess
-        g2 = (g1 + m/g1) / 2 # current guess is updated using the average of the last guess and m/last_guess
+        g2 = (g1 + m/g1) / 2 # next guess is updated using the avg of the last guess and complement guess
     sqroot = g2
     return sqroot
 
