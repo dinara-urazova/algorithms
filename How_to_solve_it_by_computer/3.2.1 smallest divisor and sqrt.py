@@ -9,28 +9,34 @@ def square_root(m: int):
     return sqroot
 
 
-
+# while loop
 def smallest_divisor(num: int) -> int:
-    divisor = 0
     if num % 2 == 0:
-        divisor = 2
-        return divisor
-    else:
-        r = square_root(num)
-        d = 3
-        while n % d > 0 and d < r:
+        return 2
+    
+    r = square_root(num)
+    d = 3
+    while d <= r:
+            if num % d == 0:
+                 return d
             d += 2
-        if num % d == 0:
-            divisor = d
-        else:
-            divisor = 1
-    return divisor
+    return 1
 
 
 
+# for loop
+def smallest_divisor(num: int) -> int:
+    if num % 2 == 0:
+        return 2
+    else:
+        r = num ** 0.5
+        for i in range(3, r + 1, 2):
+            if num % i == 0:
+                return i
+        return 1
+      
 
 n = 127
 res = smallest_divisor(n)
 print(res)
-
 
