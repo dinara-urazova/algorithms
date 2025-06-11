@@ -31,8 +31,8 @@ b) generate a better estimate g2 of the square root using the averaging formula 
 
 def square_root(m: int):
     error = 0.0001
-    g2 = m / 2 # initial guess
-    g1 = 0 # next guess
+    g2 = m / 2 # current guess
+    g1 = 0 # prev guess
     while abs(g2 - g1) > error:
         g1 = g2 # update previous guess
         g2 = (g1 + m/g1) / 2 # next guess is updated using the avg of the last guess and complement guess
