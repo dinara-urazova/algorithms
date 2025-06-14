@@ -33,12 +33,23 @@ c) let the remainder assume the role of the divisor until a zero remainder is ob
 3 Return the gcd
 """
 def gcd(a: int, b: int):
-    while b != 0:
-        a, b = b, a % b
+    rem = 1
+    while rem != 0:
+        rem = a % b
+        a = b
+        b = rem
     return a
 
 res = gcd(18, 30)
 print(res)
 
 
+
+def gcd(a: int, b: int):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+res = gcd(18, 30)
+print(res)
 
